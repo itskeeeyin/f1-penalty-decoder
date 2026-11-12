@@ -1,0 +1,191 @@
+[
+  {
+    "id": "2022-abu-dhabi-russell-unsafe-release",
+    "title": "Offence - Car 63 - Unsafe release",
+    "article": "34.14a",
+    "penalty_kind": "time_penalty",
+    "incident_type": "unsafe_release",
+    "car_number": "63",
+    "text": "No / Driver 63 - George Russell\nCompetitor Mercedes-AMG Petronas F1 Team\nSession Race\nFact Unsafe release.\nOffence Breach of Article 34.14 a) of the FIA Formula One Sporting Regulations.\nDecision 5 second time penalty.\nReason The Stewards reviewed multiple angles of video evidence. Car 63 was released from the pit stop position into the path of NOR who had to take evasive action."
+  },
+  {
+    "id": "2025-japan-sainz-impeding",
+    "title": "Infringement - Car 55 - Impeding of Car 44",
+    "article": "37.5",
+    "penalty_kind": "grid",
+    "incident_type": "impeding",
+    "car_number": "55",
+    "text": "No / Driver 55 - Carlos Sainz\nCompetitor Atlassian Williams Racing\nSession Qualifying\nFact Car 55 unnecessarily impeded Car 44 in turn 1.\nInfringement Breach of Article 37.5 of the FIA Formula One Sporting Regulations.\nDecision Drop of 3 grid positions for the next Race in which the driver participates.\nReason The Stewards heard from the driver of Car 55 (Carlos Sainz)."
+  },
+  {
+    "id": "2026-sao-paulo-antonelli-unsafe-release",
+    "title": "Infringement - Car 12 - Unsafe release",
+    "article": "b1.6.2a",
+    "penalty_kind": "time_penalty",
+    "incident_type": "unsafe_release",
+    "car_number": "12",
+    "text": "No / Driver 12 - Kimi Antonelli\nCompetitor Mercedes-AMG PETRONAS F1 Team\nSession Race\nFact Car 12 was released in an unsafe manner into the path of Car 43.\nInfringement Breach of Article B1.6.2a of the FIA F1 Regulations.\nDecision 5 second time penalty.\nReason The Stewards heard from the driver of Car 12 (Kimi Antonelli) and determined that Car 12 was released in an unsafe manner."
+  },
+  {
+    "id": "2022-abu-dhabi-hamilton-pit-speed",
+    "title": "Offence - Car 44 - Pit lane speeding",
+    "article": "34.7",
+    "penalty_kind": "fine",
+    "incident_type": "pit_lane_speeding",
+    "car_number": "44",
+    "text": "No / Driver 44 - Lewis Hamilton\nSession Race\nFact Pit Lane Speeding – 84.5 km/h\nOffence Breach of Article 34.7 of the FIA Formula One Sporting Regulations.\nDecision The competitor (Mercedes-AMG Petronas F1 Team) is fined €500."
+  },
+  {
+    "id": "2022-australia-vettel-pit-speed",
+    "title": "Offence - Car 5 - Pit lane speeding",
+    "article": "34.7",
+    "penalty_kind": "fine",
+    "incident_type": "pit_lane_speeding",
+    "car_number": "5",
+    "text": "No / Driver 5 - Sebastian Vettel\nFact Pit Lane Speeding – 85.1 km/h\nOffence Breach of Article 34.7 of the FIA Formula One Sporting Regulations.\nDecision The competitor (Aston Martin Aramco Cognizant F1 Team) is fined €600."
+  },
+  {
+    "id": "2022-bahrain-sainz-unsafe-release",
+    "title": "Offence - Car 55 - Unsafe release",
+    "article": "34.14a",
+    "penalty_kind": "reprimand",
+    "incident_type": "unsafe_release",
+    "car_number": "55",
+    "text": "No / Driver 55 - Carlos Sainz\nFact Unsafe release of car 55\nOffence Breach of Article 34.14 (a) of the FIA Formula One Sporting Regulations.\nDecision Reprimand to the driver. (Non-driving)"
+  },
+  {
+    "id": "2022-imola-ocon-unsafe-release",
+    "title": "Offence - Car 31 - Unsafe release",
+    "article": "34.14a",
+    "penalty_kind": "time_penalty",
+    "incident_type": "unsafe_release",
+    "car_number": "31",
+    "text": "No / Driver 31 - Esteban Ocon\nFact Unsafe release of car 31.\nOffence Breach of Article 34.14 a) of the FIA Formula One Sporting Regulations.\nDecision 5 second time penalty."
+  },
+  {
+    "id": "2022-brazil-verstappen-collision",
+    "title": "Offence - Car 1 - Collision with car 44",
+    "article": "2d",
+    "penalty_kind": "time_penalty",
+    "incident_type": "causing_a_collision",
+    "car_number": "1",
+    "text": "No / Driver 1 - Max Verstappen\nFact Causing a collision\nOffence Breach of Appendix L Chapter IV, Article 2 d) of the FIA International Sporting Code.\nDecision 5 second time penalty 2 penalty points (total of 7 for the 12 month period)."
+  },
+  {
+    "id": "2022-brazil-norris-collision",
+    "title": "Offence - Car 4 - Collision with car 16",
+    "article": "2d",
+    "penalty_kind": "time_penalty",
+    "incident_type": "causing_a_collision",
+    "car_number": "4",
+    "text": "No / Driver 4 - Lando Norris\nFact Causing a collision\nOffence Breach of Appendix L Chapter IV, Article 2 d) of the FIA International Sporting Code.\nDecision 5 second time penalty. 2 penalty points (total of 3 for the 12 month period)."
+  },
+  {
+    "id": "2022-britain-tsunoda-collision",
+    "title": "Offence - Car 22 - Causing a collision",
+    "article": "2d",
+    "penalty_kind": "time_penalty",
+    "incident_type": "causing_a_collision",
+    "car_number": "22",
+    "text": "No / Driver 22 - Yuki Tsunoda\nFact Collision with car 10 at turn 3.\nOffence Breach of Article 2 d) Chapter IV Appendix L of the FIA International Sporting Code.\nDecision 5 second time penalty. 2 penalty points (total of 8 for the 12 month period)."
+  },
+  {
+    "id": "2022-hungary-zhou-track",
+    "title": "Decision - Car 24 - Allegedly leaving the track and gaining an advantage",
+    "article": "2c",
+    "penalty_kind": "no_further_action",
+    "incident_type": "track_limits",
+    "car_number": "24",
+    "text": "No / Driver 24 - Zhou Guanyu\nFact Allegedly left the track and gained an advantage in turn 14.\nOffence Alleged breach of Article 2 c) Chapter IV Appendix L of the FIA International Sporting Code.\nDecision No further action."
+  },
+  {
+    "id": "2022-monza-magnussen-track",
+    "title": "Offence - Car 20 - Leaving the track and gaining an advantage",
+    "article": "2c",
+    "penalty_kind": "time_penalty",
+    "incident_type": "track_limits",
+    "car_number": "20",
+    "text": "No / Driver 20 - Kevin Magnussen\nFact Left the track and gained an advantage in T2.\nOffence Breach of Article 2 c) Chapter IV Appendix L of the FIA International Sporting Code.\nDecision 5 Second Time Penalty. 1 penalty point (total of 3 for the 12 month period)."
+  },
+  {
+    "id": "2022-mexico-gasly-track",
+    "title": "Offence - Car 10 - Leaving the track and gaining an advantage",
+    "article": "2c",
+    "penalty_kind": "time_penalty",
+    "incident_type": "track_limits",
+    "car_number": "10",
+    "text": "No / Driver 10 - Pierre Gasly\nFact Leaving the track and gaining an advantage\nOffence Breach of Appendix L Chapter IV, Article 2 c) of the FIA International Sporting Code.\nDecision 5 second time penalty 1 penalty point (total of 10 for the 12 month period)."
+  },
+  {
+    "id": "2022-monaco-perez-impeding",
+    "title": "Offence - Car 11 - Impeding car 63 in turn 18",
+    "article": "37.5",
+    "penalty_kind": "warning",
+    "incident_type": "impeding",
+    "car_number": "11",
+    "text": "No / Driver 11 - Sergio Perez\nFact Unnecessary impeding of Car 63 by Car 11 at turn 18.\nOffence Breach of Article 37.5 of the FIA Formula One Sporting Regulations.\nDecision Formal Warning for the driver. A fine of €10,000 is imposed of the Competitor."
+  },
+  {
+    "id": "2022-spain-albon-impeding",
+    "title": "Decision - Car 23 - Alleged impeding of Car 55 at turn 2",
+    "article": "37.5",
+    "penalty_kind": "no_further_action",
+    "incident_type": "impeding",
+    "car_number": "23",
+    "text": "No / Driver 23 - Alexander Albon\nFact Alleged impeding of Car 55 by Car 23 at turn 2.\nOffence Alleged breach of Article 37.5 of the FIA Formula One Sporting Regulations.\nDecision No further action."
+  },
+  {
+    "id": "2023-abu-dhabi-piastri-impeding",
+    "title": "Decision - Car 81 - Alleged impeding of Car 10",
+    "article": "37.5",
+    "penalty_kind": "no_further_action",
+    "incident_type": "impeding",
+    "car_number": "81",
+    "text": "No / Driver 81 - Oscar Piastri\nFact Car 81 appeared to impede Car 10 in turn 4.\nOffence Alleged breach of Article 37.5 of the FIA Formula One Sporting Regulations.\nDecision No further action."
+  },
+  {
+    "id": "2022-usa-ocon-yellow",
+    "title": "Decision - Car 31 - Allegedly ignoring yellow flags",
+    "article": "2.5.5b",
+    "penalty_kind": "no_further_action",
+    "incident_type": "yellow_flags",
+    "car_number": "31",
+    "text": "No / Driver 31 - Esteban Ocon\nFact Overtook car 47 between T11 and T12 under yellow flags.\nOffence Alleged breach of Article 2.5.5 b), Appendix H of the International Sporting Code.\nDecision No further action."
+  },
+  {
+    "id": "2023-vegas-stroll-yellow",
+    "title": "Decision - Car 18 - Alleged failing to slow under Yellow Flags",
+    "article": "2.5.5b",
+    "penalty_kind": "no_further_action",
+    "incident_type": "yellow_flags",
+    "car_number": "18",
+    "text": "No / Driver 18 - Lance Stroll\nFact Car 18 appeared not to slow for a single waved yellow flag in Turn 5.\nOffence Alleged breach of Appendix H, Article 2.5.5 b) of the International Sporting Code.\nDecision No further action."
+  },
+  {
+    "id": "2024-canada-ricciardo-false-start",
+    "title": "Infringement - Car 3 - False Start (Corrected)",
+    "article": "48.1",
+    "penalty_kind": "time_penalty",
+    "incident_type": "false_start",
+    "car_number": "3",
+    "text": "No / Driver 3 - Daniel Ricciardo\nFact False Start.\nOffence Breach of Article 48.1 of the FIA Formula One Sporting Regulations.\nDecision 5 second time penalty."
+  },
+  {
+    "id": "2024-jeddah-norris-false-start",
+    "title": "Decision - Car 4 - Alleged false start",
+    "article": "48.1",
+    "penalty_kind": "no_further_action",
+    "incident_type": "false_start",
+    "car_number": "4",
+    "text": "No / Driver 4 - Lando Norris\nFact Alleged false start.\nOffence Alleged breach of Article 48.1 of the FIA Formula One Sporting Regulations.\nDecision No further action."
+  },
+  {
+    "id": "2025-baku-alonso-false-start",
+    "title": "Infringement - Car 14 False start - Moving before signal",
+    "article": "48.1a",
+    "penalty_kind": "time_penalty",
+    "incident_type": "false_start",
+    "car_number": "14",
+    "text": "No / Driver 14 - Fernando Alonso\nFact Car 14 moved forward from its start position, prior to the start signal.\nOffence Breach of Article 48.1 a) of the FIA Formula One Sporting Regulations.\nDecision 5 second time penalty."
+  }
+]
