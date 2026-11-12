@@ -205,6 +205,7 @@ def one_pdf(item: dict) -> dict:
         "season": item["season"],
         "event": item["event"],
         "session": parsed["session"],
+        "session_type": parsed.get("session_type") or "",
         "driver": parsed["driver"],
         "car_number": parsed["car_number"],
         "competitor": parsed["competitor"],
