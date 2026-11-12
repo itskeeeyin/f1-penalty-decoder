@@ -140,34 +140,74 @@ def driver_name(text: str) -> str:
     return name
 
 
+COMPETITIVE_SESSION_TYPES = ("qualifying", "sprint_qualifying", "sprint", "race")
+
+SESSION_LABELS = {
+    "qualifying": "Qualifying",
+    "sprint_qualifying": "Sprint Qualifying",
+    "sprint": "Sprint",
+    "race": "Race",
+    "practice": "Practice",
+}
+
+
+def classify_session(text: str) -> str:
+    """Map a session string onto a session type.
+
+    Practice labels (``Free Practice 1``, ``Practice 2``, ``FP3``) collapse to
+    ``practice``. ``Sprint Shootout`` is the old name for Sprint Qualifying.
+    Anything else, including an empty string, is ``unknown``.
+    """
+    low = re.sub(r"\s+", " ", (text or "").lower()).strip()
+    if not low:
+        return "unknown"
+    if "sprint shootout" in low or "sprint qualifying" in low:
+        return "sprint_qualifying"
+    if (
+        re.search(r"\bfp\s*[123]\b", low)
+        or "free practice" in low
+        or re.search(r"\bpractice(?:\s*[123])?\b", low)
+    ):
+        return "practice"
+    if re.search(r"\bsprint\b", low):
+        return "sprint"
+    if "qualifying" in low:
+        return "qualifying"
+    if re.search(r"\brace\b", low):
+        return "race"
+    return "unknown"
+
+
+def session_type_for_record(record: dict[str, Any]) -> str:
+    """Classify a stored row from its session line, then its title.
+
+    A session line of ``Sprint`` is Sprint Qualifying when the document title
+    says Sprint Shootout or Sprint Qualifying. The stored session string is
+    left unchanged.
+    """
+    primary = classify_session(record.get("session") or "")
+    title = classify_session(record.get("document_title") or "")
+    if primary == "sprint" and title == "sprint_qualifying":
+        return "sprint_qualifying"
+    if primary == "unknown":
+        return title
+    return primary
+
+
+def session_label(session_type: str) -> str:
+    return SESSION_LABELS.get(session_type, "")
+
+
 def session_name(text: str, title: str) -> str:
     found = _field(
         text,
         ("Session",),
         ("Fact", "Offence", "Infringement", "Decision", "Reason", "Competitor"),
     )
-    if found:
-        token = found.split(" ")[0]
-        known = {
-            "race": "Race",
-            "qualifying": "Qualifying",
-            "sprint": "Sprint",
-            "practice": "Practice",
-        }
-        lower = found.lower()
-        for key, label in known.items():
-            if key in lower:
-                if "sprint" in lower and "qualifying" in lower:
-                    return "Sprint Qualifying"
-                if key == "practice":
-                    return found[:40]
-                return label
-        return token[:40]
-    lower = title.lower()
-    for label in ("Qualifying", "Sprint", "Race", "Practice"):
-        if label.lower() in lower:
-            return label
-    return ""
+    kind = classify_session(found) if found else "unknown"
+    if kind == "unknown":
+        kind = classify_session(title)
+    return session_label(kind)
 
 
 def cited_cars(text: str) -> set[str]:
@@ -255,6 +295,7 @@ def parse_decision_text(text: str, title: str = "") -> dict[str, Any]:
         "driver": driver_name(cleaned),
         "competitor": _field(cleaned, ("Competitor",), ("Time", "Session", "Fact", "Offence", "Infringement")),
         "session": session_name(cleaned, title),
+        "session_type": classify_session(session_name(cleaned, title)),
         "incident_summary": summary[:500],
         "offence_text": offence[:500],
         "article": article,

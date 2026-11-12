@@ -42,6 +42,24 @@ def test_impeding_fields():
     assert parsed["session"] == "Qualifying"
 
 
+def test_session_labels_collapse_practice_and_shootout():
+    practice = parse_decision_text(
+        "No / Driver 63 - George Russell\nSession Free Practice 1\nFact Car 63 left the track.\nDecision No further action.",
+        "Practice 1",
+    )
+    assert practice["session"] == "Practice"
+    assert practice["session_type"] == "practice"
+    shootout = parse_decision_text(
+        "Session Sprint Shootout\nFact The cars below exceeded the time limit.\nDecision No further action.",
+        "Decision - Sprint Shootout",
+    )
+    assert shootout["session"] == "Sprint Qualifying"
+    assert shootout["session_type"] == "sprint_qualifying"
+    fp3 = parse_decision_text("Session FP3\nFact Noted.\nDecision Warning.", "FP3")
+    assert fp3["session"] == "Practice"
+    assert fp3["session_type"] == "practice"
+
+
 def test_missing_article_stays_blank():
     parsed = parse_decision_text("Fact Something happened.\nDecision No further action.", "Decision")
     assert parsed["article"] == ""

@@ -8,9 +8,9 @@ It is not affiliated with the FIA or with Formula 1. It does not replace the dec
 
 ## What you can do
 
-- Browse decisions from the 2022 season through the latest race weekend stored in this file. Pick a season and a Grand Prix, then a decision.
-- Read a short explanation. The article number and the penalty wording come from the document. The article text comes from the regulation PDF linked for that year. If that article is not in the file, the page says **I don't know**.
-- Ask whether a similar incident is already in the file (track limits, unsafe release, causing a collision, impeding, and the other tags the parser knows). The counts are the number of rows with that tag. They are not a claim about every decision the stewards have ever written.
+- Browse competitive-session decisions from the 2022 season through the latest race weekend stored in this file. That means Qualifying, Sprint Qualifying (including the older Sprint Shootout name), Sprint, and Race. Practice sessions are kept in the file and left out of the list. The sidebar can narrow the list to one of those four sessions.
+- Read a short explanation. The article number and the penalty wording come from the document. The article text comes from the regulation PDF linked for that year. If that article is not in the file, the page says **I don't know**. A deleted-lap or timing-table document is summarised in prose (cars, turns, session, and the decision). The raw timing rows are not pasted into that note.
+- Ask whether a similar incident is already in the file (track limits, unsafe release, causing a collision, impeding, and the other tags the parser knows). The counts are the number of competitive-session rows with that tag. They are not a claim about every decision the stewards have ever written.
 - Paste the text of a document if it is not in the list. The note uses that paste plus the regulation file for the season selected in the sidebar.
 
 With no API key, the note is a fixed summary of those fields. If you set `XAI_API_KEY` or `GEMINI_API_KEY`, the app asks that model to rewrite the same fields. The model is told not to add incidents, quotes, or article text that are not in the fields. If the call fails, the fixed summary is shown.
@@ -24,7 +24,7 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-The app reads `data/decisions.json` and `data/regulations/`. It does not download anything when it starts.
+The app reads `data/decisions.json` and `data/regulations/`. It does not download anything when it starts. `app.py` adds `src/` to its module path, so `streamlit run app.py` works without setting `PYTHONPATH`.
 
 Streamlit Community Cloud can host this file (Python 3.12, `streamlit run app.py`) without a key. This repository is not deployed.
 
@@ -32,15 +32,17 @@ Streamlit Community Cloud can host this file (Python 3.12, `streamlit run app.py
 
 Stewards' documents are the public PDFs linked from the FIA decision-document pages for the Formula One World Championship, seasons 2022, 2023, 2024, 2025, and 2026. The collector keeps documents whose titles are an infringement, an offence, or a decision, and skips summons, classifications, notes, and grids. Each stored row has the season, event, session, driver, car number, a short incident line, the article cited, the penalty line, and the PDF link.
 
-The file is not a complete set. A first download stored many PDFs under one cache name when their paths shared a long prefix, so one document's text was attached to other titles. Every row that shared an extract with a different title, or that named a different car from its title, was deleted. A retry was not finished: fia.com answered HTTP 429, and this project does not try to get around that limit. After the deletions the file holds **665** decisions:
+The file is not a complete set. A first download stored many PDFs under one cache name when their paths shared a long prefix, so one document's text was attached to other titles. Every row that shared an extract with a different title, or that named a different car from its title, was deleted. A retry was not finished: fia.com answered HTTP 429, and this project does not try to get around that limit. After the deletions the file holds **665** decisions. The app does not delete practice rows. It classifies each session when the file is loaded: Free Practice, Practice 1/2/3, and FP1/FP2/FP3 are practice; Sprint Shootout is Sprint Qualifying. Rows whose session is still unknown stay out of the default view, and the sidebar says how many were excluded.
 
-| Season | Decisions kept |
+Of the 665 stored decisions, **493** are competitive sessions, **118** are practice, and **54** have an unknown session (including reconnaissance laps and documents that never name a session). Competitive decisions by season:
+
+| Season | Competitive decisions |
 | --- | --- |
-| 2022 | 90 |
-| 2023 | 66 |
-| 2024 | 59 |
-| 2025 | 264 |
-| 2026 | 186 |
+| 2022 | 51 |
+| 2023 | 50 |
+| 2024 | 54 |
+| 2025 | 204 |
+| 2026 | 134 |
 
 2023 and 2024 are thin. Precedent counts for those seasons are counts inside this file only. `data/ingest_failures.json` lists the dropped titles and the download errors. The ingest script does not invent rows to fill the gap.
 
@@ -74,7 +76,7 @@ GitHub Actions workflow **Refresh decision data** runs only when someone starts 
 pytest -q
 ```
 
-Unit tests cover the parser and the precedent counts. `tests/test_golden.py` checks about twenty real documents: the article, penalty tag, and incident tag must match the checked examples. Those examples are excerpts taken from the PDFs, so the test does not need the network or a key.
+Unit tests cover the parser, the precedent counts, and the timing-tower HTML. `tests/test_golden.py` checks about twenty real documents: the article, penalty tag, and incident tag must match the checked examples. Those examples are excerpts copied from the PDFs, so the test does not need the network or a key. None of them is a practice session (Free Practice, Practice 1/2/3, or FP1/FP2/FP3).
 
 ## Limits
 
